@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    halo dunia
+    Halo dunia
 </body>
 </html>
