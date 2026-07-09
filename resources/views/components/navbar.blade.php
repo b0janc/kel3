@@ -2,7 +2,7 @@
     <div class="w-[90%] h-[100px] mx-auto flex items-center">
 
         {{-- Logo --}}
-        <a href="/home" class="font-['Playfair_Display',serif] text-[20px] font-bold text-[#F3E21B] no-underline">
+        <a href="/dashboard" class="font-['Playfair_Display',serif] text-[20px] font-bold text-[#F3E21B] no-underline">
             Komi<em class="text-white">Caffe</em>
         </a>
 
