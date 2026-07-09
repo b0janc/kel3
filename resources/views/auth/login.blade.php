@@ -2,152 +2,98 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Login Kasir</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-    <div class="container mt-5" style="max-width: 400px;">
-        <h3>Login Kasir</h3>
-
-        @if ($errors->any())
-            <div class="alert alert-danger">{{ $errors->first() }}</div>
-        @endif
-
-        <form method="POST" action="{{ route('login.post') }}">
-            @csrf
-            <div class="mb-3">
-                <label>email</label>
-                <input type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus>
-            </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
-    </div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Kasir</title>
-
-    <!-- Tailwind CSS CDN -->
+    <title>Login - Komi Caffe</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        body{
-            background: linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
         }
     </style>
 </head>
+<body class="min-h-screen flex items-center justify-center p-4">
 
-<body class="min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
 
-<div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
-
-    <!-- Kiri -->
-    <div class="hidden md:flex flex-col justify-center bg-blue-600 text-white p-12">
-
+        <!-- Sisi Kiri: Branding -->
+        <div class="hidden md:flex flex-col justify-center bg-blue-600 text-white p-12">
             <h2 class="text-5xl font-bold leading-tight">
-
                 Welcome to
                 <br>
                 <span class="text-yellow-400">Komi Caffe</span>
             </h2>
-            </h2>
-
-        <p class="text-blue-100 leading-relaxed">
-            Selamat datang kembali di Komi Caffe!
-        </p>
-
-    </div>
-
-    <!-- Kanan -->
-    <div class="p-10">
-
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-800">
-                Komi Caffe
-            </h2>
-
-            <p class="text-gray-500 mt-2">
-                Silakan login untuk melanjutkan
+            <p class="text-blue-100 leading-relaxed mt-4">
+                Selamat datang kembali di Komi Caffe!
             </p>
         </div>
 
-        @if(session('success'))
-            <div class="mb-4 bg-green-100 text-green-700 p-3 rounded-lg">
-                {{ session('success') }}
-            </div>
-        @endif
+        <!-- Sisi Kanan: Form Login -->
+        <div class="p-10">
 
-        @if($errors->any())
-            <div class="mb-4 bg-red-100 text-red-700 p-3 rounded-lg">
-                {{ $errors->first() }}
-            </div>
-        @endif
-
-        <form action="{{ route('login') }}" method="POST" class="space-y-6">
-
-            @csrf
-
-            <div>
-                <label class="block mb-2 text-gray-700 font-medium">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    name="email"
-                    value="{{ old('email') }}"
-                    required
-                    class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    placeholder="email@example.com">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Komi Caffe</h2>
+                <p class="text-gray-500 mt-2">Silakan login untuk melanjutkan</p>
             </div>
 
-            <div>
-                <label class="block mb-2 text-gray-700 font-medium">
-                    Password
-                </label>
+            <!-- Pesan Error -->
+            @if ($errors->any())
+                <div class="mb-4 bg-red-100 text-red-700 p-3 rounded-lg">
+                    {{ $errors->first() }}
+                </div>
+            @endif
 
-                <input
-                    type="password"
-                    name="password"
-                    required
-                    class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    placeholder="••••••••">
+            <!-- Form Login -->
+            <form action="{{ route('login.post') }}" method="POST" class="space-y-6">
+                @csrf
+
+                <div>
+                    <label class="block mb-2 text-gray-700 font-medium">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus
+                        class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        placeholder="email@example.com"
+                    >
+                </div>
+
+                <div>
+                    <label class="block mb-2 text-gray-700 font-medium">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        placeholder="••••••••"
+                    >
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" name="remember">
+                        <span class="text-sm text-gray-600">Ingat Saya</span>
+                    </label>
+                    <a href="#" class="text-blue-600 hover:underline text-sm">Lupa Password?</a>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
+                >
+                    Login
+                </button>
+
+            </form>
+
+            <div class="mt-10 text-center text-gray-500 text-sm">
+                © {{ date('Y') }} Sistem Kasir
             </div>
 
-            <div class="flex items-center justify-between">
-
-                <label class="flex items-center gap-2">
-                    <input type="checkbox" name="remember">
-                    <span class="text-sm text-gray-600">
-                        Ingat Saya
-                    </span>
-                </label>
-
-                <a href="#" class="text-blue-600 hover:underline text-sm">
-                    Lupa Password?
-                </a>
-
-            </div>
-
-            <button
-                type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition">
-
-                Login
-
-            </button>
-
-        </form>
-
-        <div class="mt-10 text-center text-gray-500 text-sm">
-            © {{ date('Y') }} Sistem Kasir
         </div>
 
     </div>
-
-</div>
 
 </body>
 </html>

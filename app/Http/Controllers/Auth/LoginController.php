@@ -8,44 +8,50 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-<<<<<<< HEAD
-    public function login(Request $request)
-{
-    $credentials = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
-
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
-
-        // Cek role user
-        $user = auth()->user();
-        if ($user->role === 'admin') {
-            return redirect()->route('dashboard.admin');   // ke dashboard admin
-        } else {
-            return redirect()->route('dashboard.pelanggan'); // ke dashboard pelanggan
-        }
+    /**
+     * Tampilkan form login
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
 
-    return back()->withErrors([
-        'email' => 'Email atau Password Salah',
-    ])->onlyInput('email');
-}
-}
-
-
-=======
-    public function index()
+    /**
+     * Proses login
+     */
+    public function login(Request $request)
     {
-        return view('auth.login', [
-            'title' => 'Login',
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            $user = auth()->user();
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard.admin');
+            } else {
+                return redirect()->route('dashboard.kasir');
+            }
+        }
+
+        return back()->withErrors([
+            'email' => 'Email atau Password Salah',
+        ])->onlyInput('email');
     }
 
-    public function login(Request $request)
+    /**
+     * Proses logout
+     */
+    public function logout(Request $request)
     {
-        return redirect()->route('dashboard');
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }
->>>>>>> main

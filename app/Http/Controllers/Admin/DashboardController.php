@@ -46,7 +46,7 @@ class DashboardController extends Controller
                         ->orderBy('kategori')
                         ->get();
 
-            return view('dashboard.pelanggan', compact('menu'));
+            return view('dashboard.kasir', compact('menu'));
         }
     }
 }

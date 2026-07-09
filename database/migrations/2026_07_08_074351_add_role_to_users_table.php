@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', ['admin', 'kasir'])->default('kasir')->after('password');
+            // Gunakan ENUM dengan nilai yang sesuai dengan yang digunakan di aplikasi
+            $table->enum('role', ['admin', 'kasir'])
+                  ->default('kasir')
+                  ->after('password');
+            
+            // Tambahkan index untuk mempercepat query berdasarkan role
+            $table->index('role');
         });
     }
 

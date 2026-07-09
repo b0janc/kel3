@@ -1,17 +1,20 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\PelangganDashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\KasirDashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RiwayatTransaksiController;
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Route untuk Guest (belum login)
+|--------------------------------------------------------------------------
+*/
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('auth.login');
 });
-
-//autentikasi
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('login');
@@ -19,48 +22,55 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
 });
 
-
-Route::middleware(['auth', 'role:pelanggan'])->group(function () {
-    Route::get('/dashboard/pelanggan', [PelangganDashboardController::class, 'index'])->name('dashboard.pelanggan');
-});
-
-
-//halaman login
- Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/dashboard/admin', [DashboardController::class, 'index'])->name('dashboard.admin');
-});
-
+/*
+|--------------------------------------------------------------------------
+| Route yang membutuhkan autentikasi (semua user login)
+|--------------------------------------------------------------------------
+*/
 Route::middleware(['auth'])->group(function () {
 
-//admin
-    Route::get('/dashboard/admin', [DashboardController::class, 'index'])-> name('dashboard.admin');
+    // Dashboard umum (opsional, bisa diarahkan sesuai role)
+    Route::get('/dashboard', function () {
+        // Redirect berdasarkan role (contoh)
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('dashboard.admin');
+        }
+        return redirect()->route('dashboard.kasir');
+    })->name('dashboard');
 
-//checkout
+    // Checkout
     Route::controller(CheckoutController::class)->group(function () {
         Route::get('/checkout', 'index')->name('checkout');
         Route::post('/checkout/process', 'process')->name('checkout.process');
-        Route::get('/checkout/success/{id}', 'success')->name('checkout.process');
+        Route::get('/checkout/success/{id}', 'success')->name('checkout.success'); // ← perbaiki nama
     });
 
+    // Riwayat transaksi
     Route::get('/riwayat-transaksi', [RiwayatTransaksiController::class, 'index'])->name('riwayat.transaksi');
 
+    // Keranjang (contoh, sesuaikan dengan controller jika ada)
+    Route::get('/cart', function () {
+        return view('keranjang');
+    })->name('cart');
 });
-Route::get('/', [LoginController::class, 'index']);
 
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+/*
+|--------------------------------------------------------------------------
+| Route khusus role kasir
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth', 'role:kasir'])->group(function () {
+   Route::controller(KasirDashboardController::class)->group(function () {
+    Route::get('/dashboard/kasir', 'index')->name('dashboard.kasir');
+    });
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
-
-Route::get('/cart', function () {
-    return view('keranjang');
-})->name('cart');
-
-Route::get('/riwayat-transaksi', function () {
-    return view('riwayat-transaksi');
-})->name('riwayat-transaksi');
+/*
+|--------------------------------------------------------------------------
+| Route khusus role admin
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard/admin', [AdminDashboardController::class, 'index'])
+        ->name('dashboard.admin');
+});
