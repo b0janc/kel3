@@ -220,12 +220,8 @@
 
     <script>
         function tambahKeKeranjang(namaProduk, hargaProduk) {
-            alert(
-                namaProduk +
-                " seharga Rp " +
-                hargaProduk.toLocaleString('id-ID') +
-                " berhasil ditambahkan ke keranjang!"
-            );
+            // Redirect ke halaman keranjang
+            window.location.href = '/keranjang';
         }
     </script>
 

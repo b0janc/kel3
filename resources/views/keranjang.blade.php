@@ -1,7 +1,6 @@
 HALAMAN KERANJANG
 
-<x-layout>
-    <x-slot:title>{{ $title }}</x-slot:title>
+<x-layout title="Keranjang">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -147,6 +146,7 @@ HALAMAN KERANJANG
         <div class="mt-10 flex justify-end">
 
             <button
+                onclick="window.location.href='/checkout'"
                 class="bg-[#0235AC] hover:bg-blue-900 text-white px-10 py-4 rounded-xl font-semibold shadow-md transition">
 
                 Checkout
