@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\PelangganDashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RiwayatTransaksiController;
@@ -18,12 +19,21 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
 });
 
+
+Route::middleware(['auth', 'role:pelanggan'])->group(function () {
+    Route::get('/dashboard/pelanggan', [PelangganDashboardController::class, 'index'])->name('dashboard.pelanggan');
+});
+
+
 //halaman login
+ Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard/admin', [DashboardController::class, 'index'])->name('dashboard.admin');
+});
 
 Route::middleware(['auth'])->group(function () {
 
 //admin
-    Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboard');
+    Route::get('/dashboard/admin', [DashboardController::class, 'index'])-> name('dashboard.admin');
 
 //checkout
     Route::controller(CheckoutController::class)->group(function () {
