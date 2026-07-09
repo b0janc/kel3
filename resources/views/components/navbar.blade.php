@@ -1,5 +1,5 @@
 <nav class="w-full bg-[#0235AC] border-b-2 border-[#F3E21B] font-['DM_Sans',sans-serif]">
-    <div class="w-[90%] h-[100px] mx-auto flex items-center">
+    <div class="w-[90%] h-25 mx-auto flex items-center">
 
         {{-- Logo --}}
         <a href="/home" class="font-['Playfair_Display',serif] text-[20px] font-bold text-[#F3E21B] no-underline">
@@ -8,8 +8,8 @@
 
         {{-- Menu --}}
         <div class="flex gap-1 ml-12">
-            <x-nav-link href="/home" :active="request()->is('home')">Home</x-nav-link>
-            <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
+            <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Dasboard</x-nav-link>
+            <x-nav-link href="/riwayat-transaksi" :active="request()->is('riwayat-transaksi')">Riwayat</x-nav-link>
             <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
         </div>
 

@@ -19,40 +19,40 @@
     </div>
 </div>
 
-        <div class="mb-12 flex flex-wrap items-center gap-[15px]">
-            <span class="font-bold text-[#0235AC] mr-[10px]">Kategori:</span>
+        <div class="mb-12 flex flex-wrap items-center gap-3.75">
+            <span class="font-bold text-[#0235AC] mr-2.5">Kategori:</span>
 
-            <a href="#" class="bg-[#66a3ff] text-[#0235AC] px-[15px] py-[6px] rounded-[20px] no-underline text-sm font-semibold">
+            <a href="#" class="bg-[#66a3ff] text-[#0235AC] px-3.75 py-1.5 rounded-[20px] no-underline text-sm font-semibold">
                 Semua
             </a>
 
-            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-[15px] py-[6px] rounded-[20px] no-underline text-sm">
+            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-3.75 py-1.5 rounded-[20px] no-underline text-sm">
                 Makanan Berat
             </a>
 
-            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-[15px] py-[6px] rounded-[20px] no-underline text-sm">
+            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-3.75 py-1.5 rounded-[20px] no-underline text-sm">
                 Minuman
             </a>
 
-            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-[15px] py-[6px] rounded-[20px] no-underline text-sm">
+            <a href="#" class="border border-[#0235AC] text-[#0235AC] px-3.75 py-1.5 rounded-[20px] no-underline text-sm">
                 Snack
             </a>
         </div>
 
-        <div class="grid gap-[30px] [grid-template-columns:repeat(auto-fill,minmax(350px,1fr))]">
+        <div class="grid gap-7.5 grid-cols-[repeat(auto-fill,minmax(350px,1fr))]">
 
             {{-- CARD 1 --}}
             <article class="bg-white border border-[#eee] rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.05)] flex flex-col justify-between">
 
                 <div>
                     <div
-                        class="w-full h-[200px] bg-cover bg-no-repeat bg-center rounded-t-2xl"
+                        class="w-full h-50 bg-cover bg-no-repeat bg-center rounded-t-2xl"
                         style="background-image:url('{{ asset('images/ayam-bakar-taliwang.jpg.jpeg') }}')">
                     </div>
 
-                    <div class="px-5 pt-5 pb-[10px]">
+                    <div class="px-5 pt-5 pb-2.5">
 
-                        <div class="flex justify-between items-center mb-[10px]">
+                        <div class="flex justify-between items-center mb-2.5">
                             <span class="text-[#BF6000] text-xs font-bold uppercase">
                                 Resep Ayam
                             </span>
@@ -64,7 +64,7 @@
                             Ayam Bakar Taliwang Pedas Menggigit
                         </h3>
 
-                        <p class="text-[#666] text-sm leading-[1.6] mb-[15px]">
+                        <p class="text-[#666] text-sm leading-[1.6] mb-3.75">
                             Cara membuat bumbu Taliwang asli yang meresap sampai ke tulang.
                             Cocok untuk hidangan makan malam keluarga...
                         </p>
@@ -97,13 +97,13 @@
 
                 <div>
                     <div
-                        class="w-full h-[200px] bg-cover bg-no-repeat bg-center rounded-t-2xl"
+                        class="w-full h-50 bg-cover bg-no-repeat bg-center rounded-t-2xl"
                         style="background-image:url('{{ asset('images/es-jeruk.jpg.jpeg') }}')">
                     </div>
 
-                    <div class="px-5 pt-5 pb-[10px]">
+                    <div class="px-5 pt-5 pb-2.5">
 
-                        <div class="flex justify-between items-center mb-[10px]">
+                        <div class="flex justify-between items-center mb-2.5">
                             <span class="text-[#014e0a] text-xs font-bold uppercase">
                                 Minuman Segar
                             </span>
@@ -115,7 +115,7 @@
                             Es Jeruk Seger
                         </h3>
 
-                        <p class="text-[#666] text-sm leading-[1.6] mb-[15px]">
+                        <p class="text-[#666] text-sm leading-[1.6] mb-3.75">
                             Minuman es jeruk segar dengan tambahan daun mint dan sedikit madu
                             untuk rasa manis alami. Resep mudah untuk melepas dahaga...
                         </p>
@@ -148,13 +148,13 @@
 
                 <div>
                     <div
-                        class="w-full h-[200px] bg-cover bg-no-repeat bg-center rounded-t-2xl"
+                        class="w-full h-50 bg-cover bg-no-repeat bg-center rounded-t-2xl"
                         style="background-image:url('{{ asset('images/nutella-tiramisu.jpg.jpeg') }}')">
                     </div>
 
-                    <div class="px-5 pt-5 pb-[10px]">
+                    <div class="px-5 pt-5 pb-2.5">
 
-                        <div class="flex justify-between items-center mb-[10px]">
+                        <div class="flex justify-between items-center mb-2.5">
                             <span class="text-[#4A148C] text-xs font-bold uppercase">
                                 Snack
                             </span>
@@ -166,7 +166,7 @@
                             Nutella Tiramisu
                         </h3>
 
-                        <p class="text-[#666] text-sm leading-[1.6] mb-[15px]">
+                        <p class="text-[#666] text-sm leading-[1.6] mb-3.75">
                             Nutella enak dan lezat, cocok untuk camilan sehat!
                         </p>
 
@@ -196,7 +196,7 @@
         </div>
 
         {{-- Pagination --}}
-        <div class="mt-16 flex justify-center gap-[10px]">
+        <div class="mt-16 flex justify-center gap-2.5">
 
             <a href="#" class="px-4 py-2 border border-[#eee] text-[#0235AC] no-underline rounded-lg">
                 Sebelumnya
