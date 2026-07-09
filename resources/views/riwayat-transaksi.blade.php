@@ -1,157 +1,156 @@
-HALAMAN KERANJANG
-
-<x-layout>
-    <x-slot:title>{{ $title }}</x-slot:title>
+<x-layout title="Riwayat Transaksi">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <div class="w-full px-[5%] py-10 bg-white min-h-screen">
 
         <!-- Judul -->
-        <div class="mb-10">
+        <div class="mb-8">
             <h1 class="text-3xl font-bold text-[#0235AC]">
-                Keranjang Saya
+                Riwayat Transaksi
             </h1>
 
             <p class="text-gray-500 mt-2">
-                Periksa kembali pesanan sebelum melakukan checkout.
+                Berikut daftar transaksi yang telah berhasil dilakukan.
             </p>
         </div>
 
-        <!-- Daftar Keranjang -->
-        <div class="space-y-6">
+        <div class="max-w-5xl mx-auto space-y-6">
 
-            <!-- ITEM 1 -->
-            <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
+            <!-- Transaksi 1 -->
+            <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-6">
 
-                <img src="{{ asset('images/Ayam Bakar Taliwang.jpg') }}"
-                    class="w-32 h-28 rounded-xl object-cover">
+                <div class="flex justify-between items-start">
 
-                <div class="flex-1">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#0235AC]">
+                            TRX-0001
+                        </h2>
 
-                    <span class="text-xs font-bold uppercase text-orange-500">
-                        Resep Ayam
+                        <p class="text-sm text-gray-500 mt-1">
+                            09 Juli 2026 • 12:45 WIB
+                        </p>
+                    </div>
+
+                    <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        Selesai
                     </span>
-
-                    <h3 class="text-xl font-bold text-[#0235AC] mt-1">
-                        Ayam Bakar Taliwang
-                    </h3>
-
-                    <p class="font-bold text-[#0235AC] mt-2">
-                        Rp 45.000
-                    </p>
 
                 </div>
 
-                <div class="flex items-center gap-3">
+                <div class="border-t border-gray-200 my-5"></div>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        -
-                    </button>
+                <div class="space-y-3">
 
-                    <span class="font-bold text-lg w-8 text-center">
-                        1
-                    </span>
+                    <div class="flex justify-between">
+                        <span>Ayam Bakar Taliwang (1x)</span>
+                        <span>Rp45.000</span>
+                    </div>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        +
-                    </button>
+                    <div class="flex justify-between">
+                        <span>Es Jeruk Seger (2x)</span>
+                        <span>Rp24.000</span>
+                    </div>
 
-                </div>
-
-            </div>
-
-            <!-- ITEM 2 -->
-            <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
-
-                <img src="{{ asset('images/es jeruk.jpg') }}"
-                    class="w-32 h-28 rounded-xl object-cover">
-
-                <div class="flex-1">
-
-                    <span class="text-xs font-bold uppercase text-green-600">
-                        Minuman
-                    </span>
-
-                    <h3 class="text-xl font-bold text-[#0235AC] mt-1">
-                        Es Jeruk Seger
-                    </h3>
-
-                    <p class="font-bold text-[#0235AC] mt-2">
-                        Rp 12.000
-                    </p>
+                    <div class="flex justify-between">
+                        <span>Nutella Tiramisu (1x)</span>
+                        <span>Rp35.000</span>
+                    </div>
 
                 </div>
 
-                <div class="flex items-center gap-3">
+                <div class="border-t border-gray-200 my-5"></div>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        -
-                    </button>
+                <div class="flex justify-between items-center">
 
-                    <span class="font-bold text-lg w-8 text-center">
-                        2
-                    </span>
+                    <div>
+                        <p class="text-gray-500 text-sm">
+                            Nomor Meja
+                        </p>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        +
-                    </button>
+                        <p class="font-semibold text-[#0235AC]">
+                            A12
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+                        <p class="text-gray-500 text-sm">
+                            Total Pembayaran
+                        </p>
+
+                        <p class="text-2xl font-bold text-[#0235AC]">
+                            Rp112.200
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- ITEM 3 -->
-            <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
+            <!-- Transaksi 2 -->
+            <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-6">
 
-                <img src="{{ asset('images/Nutella Tiramisu.jpg') }}"
-                    class="w-32 h-28 rounded-xl object-cover">
+                <div class="flex justify-between items-start">
 
-                <div class="flex-1">
+                    <div>
+                        <h2 class="text-xl font-bold text-[#0235AC]">
+                            TRX-0002
+                        </h2>
 
-                    <span class="text-xs font-bold uppercase text-purple-700">
-                        Snack
+                        <p class="text-sm text-gray-500 mt-1">
+                            08 Juli 2026 • 18:10 WIB
+                        </p>
+                    </div>
+
+                    <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        Selesai
                     </span>
-
-                    <h3 class="text-xl font-bold text-[#0235AC] mt-1">
-                        Nutella Tiramisu
-                    </h3>
-
-                    <p class="font-bold text-[#0235AC] mt-2">
-                        Rp 35.000
-                    </p>
 
                 </div>
 
-                <div class="flex items-center gap-3">
+                <div class="border-t border-gray-200 my-5"></div>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        -
-                    </button>
+                <div class="space-y-3">
 
-                    <span class="font-bold text-lg w-8 text-center">
-                        1
-                    </span>
+                    <div class="flex justify-between">
+                        <span>Chicken Burger (2x)</span>
+                        <span>Rp56.000</span>
+                    </div>
 
-                    <button class="w-10 h-10 rounded-lg bg-[#0235AC] text-white hover:bg-blue-800 transition">
-                        +
-                    </button>
+                    <div class="flex justify-between">
+                        <span>Ice Coffee (2x)</span>
+                        <span>Rp36.000</span>
+                    </div>
+
+                </div>
+
+                <div class="border-t border-gray-200 my-5"></div>
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <p class="text-gray-500 text-sm">
+                            Nomor Meja
+                        </p>
+
+                        <p class="font-semibold text-[#0235AC]">
+                            B03
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+                        <p class="text-gray-500 text-sm">
+                            Total Pembayaran
+                        </p>
+
+                        <p class="text-2xl font-bold text-[#0235AC]">
+                            Rp94.760
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
-
-        <!-- Tombol Checkout -->
-        <div class="mt-10 flex justify-end">
-
-            <button
-                class="bg-[#0235AC] hover:bg-blue-900 text-white px-10 py-4 rounded-xl font-semibold shadow-md transition">
-
-                Checkout
-
-            </button>
 
         </div>
 

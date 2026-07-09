@@ -8,8 +8,8 @@
 
         {{-- Menu --}}
         <div class="flex gap-1 ml-12">
-            <x-nav-link href="/dashboard" :active="request()->is('dashboard')">Home</x-nav-link>
-            <x-nav-link href="/riwayat-transaksi" :active="request()->is('riwayat')">Riwayat</x-nav-link>
+            <x-nav-link href="/home" :active="request()->is('home')">Home</x-nav-link>
+            <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
             <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
         </div>
 

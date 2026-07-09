@@ -15,17 +15,15 @@
             </p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Card Checkout -->
+        <div class="max-w-4xl mx-auto">
 
-            <!-- ========================= -->
-            <!-- KIRI -->
-            <!-- ========================= -->
-            <div class="lg:col-span-2 space-y-6">
+            <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-8">
 
                 <!-- Nomor Meja -->
-                <div class=" border border-gray-200 rounded-2xl shadow-sm p-6">
+                <div class="mb-8">
 
-                    <h2 class="font-bold text-xl text-[#0235AC] mb-4">
+                    <h2 class="text-xl font-bold text-[#0235AC] mb-4">
                         Nomor Meja
                     </h2>
 
@@ -36,20 +34,22 @@
 
                 </div>
 
-                <!-- Daftar Pesanan -->
-                <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-6">
+                <!-- Pesanan -->
+                <div class="mb-8">
 
-                    <h2 class="font-bold text-xl text-[#0235AC] mb-6">
+                    <h2 class="text-xl font-bold text-[#0235AC] mb-5">
                         Pesanan
                     </h2>
 
                     <div class="space-y-5">
 
-                        <div class="flex justify-between">
+                        <div class="flex justify-between items-center">
+
                             <div>
                                 <h3 class="font-semibold text-[#0235AC]">
                                     Ayam Bakar Taliwang
                                 </h3>
+
                                 <p class="text-sm text-gray-500">
                                     1 × Rp45.000
                                 </p>
@@ -58,15 +58,18 @@
                             <span class="font-semibold">
                                 Rp45.000
                             </span>
+
                         </div>
 
-                        <hr class="border-gray-300">
+                        <hr>
 
-                        <div class="flex justify-between">
+                        <div class="flex justify-between items-center">
+
                             <div>
                                 <h3 class="font-semibold text-[#0235AC]">
                                     Es Jeruk Seger
                                 </h3>
+
                                 <p class="text-sm text-gray-500">
                                     2 × Rp12.000
                                 </p>
@@ -75,15 +78,18 @@
                             <span class="font-semibold">
                                 Rp24.000
                             </span>
+
                         </div>
 
-                        <hr class="border-gray-300">
+                        <hr>
 
-                        <div class="flex justify-between">
+                        <div class="flex justify-between items-center">
+
                             <div>
                                 <h3 class="font-semibold text-[#0235AC]">
                                     Nutella Tiramisu
                                 </h3>
+
                                 <p class="text-sm text-gray-500">
                                     1 × Rp35.000
                                 </p>
@@ -92,6 +98,7 @@
                             <span class="font-semibold">
                                 Rp35.000
                             </span>
+
                         </div>
 
                     </div>
@@ -99,9 +106,9 @@
                 </div>
 
                 <!-- Catatan -->
-                <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-6">
+                <div class="mb-8">
 
-                    <h2 class="font-bold text-xl text-[#0235AC] mb-4">
+                    <h2 class="text-xl font-bold text-[#0235AC] mb-4">
                         Catatan Pesanan
                     </h2>
 
@@ -112,14 +119,8 @@
 
                 </div>
 
-            </div>
-
-            <!-- ========================= -->
-            <!-- KANAN -->
-            <!-- ========================= -->
-            <div>
-
-                <div class="bg-[#FEFEFD] border border-gray-200 rounded-2xl shadow-sm p-6 sticky top-24">
+                <!-- Ringkasan Pembayaran -->
+                <div class="border-t border-gray-300 pt-8">
 
                     <h2 class="text-xl font-bold text-[#0235AC] mb-5">
                         Ringkasan Pembayaran
@@ -142,37 +143,52 @@
                             <span>Rp3.000</span>
                         </div>
 
-                        <hr class="border-gray-300">
+                        <hr>
 
-                        <div class="flex justify-between font-bold text-xl text-[#0235AC]">
+                        <div class="flex justify-between text-xl font-bold text-[#0235AC]">
                             <span>Total</span>
                             <span>Rp112.200</span>
                         </div>
 
                     </div>
 
-                    <!-- Metode Pembayaran -->
-                    <div class="mt-8">
+                </div>
 
-                        <label class="font-semibold text-[#0235AC]">
-                            Metode Pembayaran
-                        </label>
+                <!-- Metode Pembayaran -->
+                <div class="mt-8">
 
-                        <select class="w-full mt-3 bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0235AC]">
+                    <label class="block font-semibold text-[#0235AC] mb-2">
+                        Metode Pembayaran
+                    </label>
 
-                            <option>Tunai</option>
-                            <option>QRIS</option>
-                            <option>Debit</option>
-                            <option>E-Wallet</option>
+                    <select
+                        class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0235AC]">
 
-                        </select>
+                        <option>Tunai</option>
+                        <option>Transfer Bank</option>
+                        <option>Kartu Kredit</option>
+                        <option>OVO</option>
+                        <option>Qris</option>
 
-                    </div>
+                    </select>
+
+                </div>
+
+                <!-- Tombol -->
+                <div class="mt-10 flex justify-end gap-4">
 
                     <button
-                        class="w-full mt-8 bg-[#0235AC] hover:bg-[#012B89] text-white py-4 rounded-xl font-semibold transition duration-300">
+                        class="px-8 py-3 border border-[#0235AC] text-[#0235AC] rounded-xl font-semibold hover:bg-[#0235AC] hover:text-white transition">
 
-                        Buat Pesanan
+                        Batal
+
+                    </button>
+
+                    <button
+                        onclick="window.location.href = '/riwayat-transaksi'"
+                        class="px-8 py-3 bg-[#0235AC] hover:bg-[#012B89] text-white rounded-xl font-semibold transition">
+
+                        Pesan
 
                     </button>
 

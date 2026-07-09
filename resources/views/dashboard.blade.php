@@ -221,7 +221,7 @@
     <script>
         function tambahKeKeranjang(namaProduk, hargaProduk) {
             // Redirect ke halaman keranjang
-            window.location.href = '/keranjang';
+            window.location.href = '/cart';
         }
     </script>
 

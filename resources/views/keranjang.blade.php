@@ -1,5 +1,3 @@
-HALAMAN KERANJANG
-
 <x-layout title="Keranjang">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +21,7 @@ HALAMAN KERANJANG
             <!-- ITEM 1 -->
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
 
-                <img src="{{ asset('images/Ayam Bakar Taliwang.jpg') }}"
+                <img src="{{ asset('images/ayam-bakar-taliwang.jpg.jpeg') }}"
                     class="w-32 h-28 rounded-xl object-cover">
 
                 <div class="flex-1">
@@ -63,7 +61,7 @@ HALAMAN KERANJANG
             <!-- ITEM 2 -->
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
 
-                <img src="{{ asset('images/es jeruk.jpg') }}"
+                <img src="{{ asset('images/es-jeruk.jpg.jpeg') }}"
                     class="w-32 h-28 rounded-xl object-cover">
 
                 <div class="flex-1">
@@ -103,7 +101,7 @@ HALAMAN KERANJANG
             <!-- ITEM 3 -->
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-5 flex items-center gap-5">
 
-                <img src="{{ asset('images/Nutella Tiramisu.jpg') }}"
+                <img src="{{ asset('images/nutella-tiramisu.jpg.jpeg') }}"
                     class="w-32 h-28 rounded-xl object-cover">
 
                 <div class="flex-1">
@@ -146,7 +144,7 @@ HALAMAN KERANJANG
         <div class="mt-10 flex justify-end">
 
             <button
-                onclick="window.location.href='/checkout'"
+                onclick="window.location.href = '/checkout'"
                 class="bg-[#0235AC] hover:bg-blue-900 text-white px-10 py-4 rounded-xl font-semibold shadow-md transition">
 
                 Checkout

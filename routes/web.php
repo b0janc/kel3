@@ -11,10 +11,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/keranjang', function () {
-    return view('keranjang');
-})->name('keranjang');
-
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+
+Route::get('/cart', function () {
+    return view('keranjang');
+})->name('cart');
+
+Route::get('/riwayat-transaksi', function () {
+    return view('riwayat-transaksi');
+})->name('riwayat-transaksi');
