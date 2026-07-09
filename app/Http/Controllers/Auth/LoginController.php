@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+<<<<<<< HEAD
     public function login(Request $request)
 {
     $credentials = $request->validate([
@@ -34,3 +35,17 @@ class LoginController extends Controller
 }
 
 
+=======
+    public function index()
+    {
+        return view('auth.login', [
+            'title' => 'Login',
+        ]);
+    }
+
+    public function login(Request $request)
+    {
+        return redirect()->route('dashboard');
+    }
+}
+>>>>>>> main
