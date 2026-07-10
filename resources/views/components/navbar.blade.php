@@ -8,7 +8,7 @@
 
         {{-- Menu --}}
         <div class="flex gap-1 ml-12">
-            <x-nav-link href="/home" :active="request()->is('home')">Home</x-nav-link>
+            <x-nav-link href="/dashboard" :active="request()->is('home')">Home</x-nav-link>
             <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
             <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
         </div>
@@ -34,7 +34,7 @@
 
                 <div class="hidden md:flex flex-col leading-none">
                     <span class="text-xs text-gray-200">Halo,</span>
-                    <span class="text-sm font-semibold">Sasaa</span>
+                    <span class="text-sm font-semibold">{{ auth()->user()->name }}</span>
                 </div>
             </a>
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\KasirDashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiwayatTransaksiController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {
-    return redirect()->route('auth.login');
+    return redirect()->route('login');
 });
 
 Route::controller(LoginController::class)->group(function () {
@@ -53,6 +54,12 @@ Route::middleware(['auth'])->group(function () {
         return view('keranjang');
     })->name('cart');
 });
+
+Route::middleware(['auth'])->group(function () {
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+        Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    });
+
 
 /*
 |--------------------------------------------------------------------------
