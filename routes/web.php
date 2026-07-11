@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -22,3 +23,5 @@ Route::get('/cart', function () {
 Route::get('/riwayat-transaksi', function () {
     return view('riwayat-transaksi');
 })->name('riwayat-transaksi');
+
+Route::get('/admin', [DashboardController::class, 'index'])->name('Dashboard');
